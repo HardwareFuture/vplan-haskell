@@ -10,6 +10,6 @@ RUN stack build;
 WORKDIR "/VPLAN/vplan-ars/server"
 CMD pwd; \
     ls; \
-    stack run;
-	
+    stack run; \
+    echo "running";
 	
