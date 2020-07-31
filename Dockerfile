@@ -8,8 +8,5 @@ RUN apt update -y && apt install wget -y && apt install git -y; \
 WORKDIR "/VPLAN/vplan-ars/server"
 RUN stack build;
 WORKDIR "/VPLAN/vplan-ars/server"
-CMD pwd; \
-    ls; \
-    stack run; \
-    echo "running";
-	
+CMD  stack run; \
+     echo "running";
