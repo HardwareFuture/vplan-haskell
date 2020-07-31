@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-EXPOSE 5000/tcp
+EXPOSE 5000
 RUN apt update -y && apt install wget -y && apt install git -y; \ 
     mkdir VPLAN; \
     cd VPLAN; \
