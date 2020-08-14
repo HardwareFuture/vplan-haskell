@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 EXPOSE 5000
-RUN apt update -y && apt install wget -y && apt install git -y; \ 
+RUN apt update -y && apt install wget -y && apt install git -y && apt install nano -y; \ 
     mkdir VPLAN; \
     cd VPLAN; \
     wget -qO- https://get.haskellstack.org/ | sh; \
