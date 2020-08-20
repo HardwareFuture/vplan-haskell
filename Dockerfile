@@ -1,14 +1,9 @@
 FROM ubuntu:latest
-EXPOSE 5000
-RUN apt update -y && apt install wget -y && apt install git -y && apt install nano -y; \ 
-    mkdir VPLAN; \
-    cd VPLAN; \
-    wget -qO- https://get.haskellstack.org/ | sh; \
-    git clone --single-branch --branch HS https://github.com/Innf107/vplan-ars.git; \
-    apt-get clear; \
-    rm -rf /etc/apt/sources.list
-WORKDIR "/VPLAN/vplan-ars/server"
-RUN stack build;
-WORKDIR "/VPLAN/vplan-ars/server"
-CMD  stack run; \
-     echo "running";
+EXPOSE 5000/tcp
+ENV TZ=Europe/Berlin
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN apt update -y && apt install wget -y && apt install git nodejs -y; \ 
+    git clone https://github.com/Innf107/vplan-ars.git; 
+
+WORKDIR "/vplan-ars" 	
+CMD node index.js;
