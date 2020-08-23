@@ -10,5 +10,3 @@ RUN stack build;
 WORKDIR "/VPLAN/vplan-ars/server"
 CMD  stack run; \
      echo "running";
-HEALTHCHECK --interval=5m --timeout=3s \
-  CMD curl -f http://localhost:5000 || exit 1
