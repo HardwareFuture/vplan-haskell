@@ -9,4 +9,4 @@ WORKDIR "/VPLAN/vplan-ars/server"
 RUN stack build;
 WORKDIR "/VPLAN/vplan-ars/server"
 CMD  stack run; \
-     echo "running";
+     echo "running yey";
